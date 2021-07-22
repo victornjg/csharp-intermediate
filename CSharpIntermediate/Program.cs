@@ -6,12 +6,14 @@ namespace CSharpIntermediate
     {
         static void Main(string[] args)
         {
-            // EXERCISE 1
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            stopwatch.Stop();
+            // EXERCISE 2
+            Post post = new Post("My question", "This is a description");
+            post.UpVote();
+            post.UpVote();
+            post.UpVote();
+            post.DownVote();
 
-            Console.WriteLine("Duration: " + stopwatch.CalculateDuration());
+            Console.WriteLine("Votes: " + post.GetVotes());
         }
     }
 }
