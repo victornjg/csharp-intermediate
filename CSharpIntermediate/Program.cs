@@ -6,7 +6,12 @@ namespace CSharpIntermediate
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // EXERCISE 1
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            stopwatch.Stop();
+
+            Console.WriteLine("Duration: " + stopwatch.CalculateDuration());
         }
     }
 }
