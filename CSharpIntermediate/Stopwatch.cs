@@ -4,29 +4,29 @@ namespace CSharpIntermediate
 {
     public class Stopwatch
     {
-        private DateTime StartTime;
-        private DateTime EndTime;
-        private bool IsRunning;
+        private DateTime _startTime;
+        private DateTime _endTime;
+        private bool _isRunning;
 
         public void Start()
         {
-            if (this.IsRunning)
+            if (_isRunning)
                 throw new InvalidOperationException("This stopwatch was already started and cannot be started again.");
-            this.StartTime = DateTime.Now;
-            this.IsRunning = true;
+            _startTime = DateTime.Now;
+            _isRunning = true;
         }
 
         public void Stop()
         {
-            if (!this.IsRunning)
+            if (!_isRunning)
                 throw new InvalidOperationException("This stopwatch wasn't started in order to be stopped.");
-            this.EndTime = DateTime.Now;
-            this.IsRunning = false;
+            _endTime = DateTime.Now;
+            _isRunning = false;
         }
 
         public TimeSpan CalculateDuration()
         {
-            return this.EndTime - this.StartTime;
+            return _endTime - _startTime;
         }
     }
 }
