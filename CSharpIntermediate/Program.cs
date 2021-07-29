@@ -1,12 +1,19 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace CSharpIntermediate
 {
-    class Program
+    partial class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var workflow = new Workflow(
+                new List<IActivity>() { 
+                    new UploadVideo(), 
+                    new CallThirdPartyEncodingService(), 
+                    new SendEmail(), 
+                    new UpdateVideoRecordOnDatabase() 
+                });
+            WorkflowEngine.Run(workflow);
         }
     }
 }
